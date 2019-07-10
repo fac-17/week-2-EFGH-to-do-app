@@ -99,3 +99,26 @@ test("deleteTodo should return an array with length-1 if id matches a todo",func
   t.end();
 })
 
+test("deleteTodo should not modify the arguments", function(t) {
+  let dummyDeleteTodo = [
+    {
+      id: 0,
+      description: "smash avocados",
+      done: true
+    },
+    {
+      id: 1,
+      description: "make coffee",
+      done: false
+    }
+  ];
+  let id = 0;
+  const dummyDeleteTodoJSON = JSON.stringify(dummyDeleteTodo);
+  const idJSON = JSON.stringify(id);
+  logic.deleteTodo(dummyDeleteTodo, id);
+  t.equal(dummyDeleteTodoJSON, JSON.stringify(dummyDeleteTodo));
+  t.equal(idJSON, idJSON);
+  t.end();
+});
+
+
