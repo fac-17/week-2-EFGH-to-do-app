@@ -138,7 +138,7 @@ test("markTodo should return an array",function(t){
   t.end();
 })
 
-test("check existing id is toggled from false to true", function(t) {
+test("markTodo - check existing id is toggled from false to true", function(t) {
   let todos = [
     {
       id: 0,
@@ -155,7 +155,7 @@ test("check existing id is toggled from false to true", function(t) {
   t.deepEqual(actual, expected);
   t.end();
 })
-test("check if done is toggled from true to false",function(t){
+test("markTodo - check if done is toggled from true to false",function(t){
   let todos = [
     {
       id: 0,
@@ -173,7 +173,7 @@ test("check if done is toggled from true to false",function(t){
   t.end();
 })
 
-test("Check if todo array is not modified", function(t) {
+test("markTodo - Check if todo array is not modified", function(t) {
   let todos = [
     {
       id: 0,
@@ -185,7 +185,7 @@ test("Check if todo array is not modified", function(t) {
     t.end();
 })
 
-test("Check if todo array elements are not modified", function(t){
+test("markTodo - Check if todo array elements are not modified", function(t){
   let todos=[
     {
       id: 0,

@@ -38,13 +38,12 @@ var todoFunctions = {
     // hint: array.filter
   },
   markTodo: function(todos, idToMark) {
-    return todos.map(function(todo){
-      if (todo.id === idToMark) {
-        todo.done = !todo.done
-        return todo;
-      } else {
-        return todo;
+    cloneTodos = this.cloneArrayOfObjects(todos);
+    return cloneTodos.map(function(cloneTodo){
+      if (cloneTodo.id === idToMark) {
+        cloneTodo.done = !cloneTodo.done
       }
+      return cloneTodo;
     })
 
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
