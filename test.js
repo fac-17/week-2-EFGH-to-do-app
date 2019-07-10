@@ -121,4 +121,19 @@ test("deleteTodo should not modify the arguments", function(t) {
   t.end();
 });
 
-
+test("markTodo should return an array",function(t){
+  let todos = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ];
+  t.equal(typeof logic.markTodo(todos,1),typeof [],"markTodo should return an array");
+  t.end();
+})
