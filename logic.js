@@ -30,18 +30,13 @@ var todoFunctions = {
     // hint: array.concat
   },
   deleteTodo: function(todos, idToDelete) {
-    if (idToDelete === 0) {
-      return [
-        {
-          id: 1,
-          description: "make coffee",
-          done: false
-        }
-      ];
-    } else {
-      return this.cloneArrayOfObjects(todos);
+    let match = todos.findIndex(function(el){
+     return el.id===idToDelete
+    });
+    if (match > -1) {
+      todos.splice(match,1);
     }
-
+    return todos;
     // return todos.filter(todo => {
     //   return todo['id'] !== idToDelete;
     // })
