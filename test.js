@@ -167,3 +167,80 @@ test("deleteTodo should not modify the arguments", function(t) {
   t.end();
 });
 
+test("markTodo should return an array",function(t){
+  let todos = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ];
+  t.equal(typeof logic.markTodo(todos,1),typeof [],"markTodo should return an array");
+  t.end();
+})
+
+test("markTodo - check existing id is toggled from false to true", function(t) {
+  let todos = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: false,
+    }];
+  let actual = logic.markTodo(todos,0);
+  let expected = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    }];
+  t.deepEqual(actual, expected);
+  t.end();
+})
+test("markTodo - check if done is toggled from true to false",function(t){
+  let todos = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    }];
+  let actual = logic.markTodo(todos,0);
+  let expected = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: false,
+    }];
+  t.deepEqual(actual, expected);
+  t.end();
+})
+
+test("markTodo - Check if todo array is not modified", function(t) {
+  let todos = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    }];
+    let actual = logic.markTodo(todos, 0);
+    t.notEqual(actual, todos);
+    t.end();
+})
+
+test("markTodo - Check if todo array elements are not modified", function(t){
+  let todos=[
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    }];
+  let todosBeforeStringified=JSON.stringify(todos);
+  logic.markTodo(todos,0);
+  let todosAfterRunningStringified=JSON.stringify(todos);
+  t.equal(todosBeforeStringified,todosAfterRunningStringified);
+  t.end();
+})
