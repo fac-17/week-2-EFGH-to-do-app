@@ -24,4 +24,29 @@ test("deleteTodo should return an array", function(t) {
   let actual = typeof returnedValue;
   t.equal(expected,actual);
   t.end();
-}) 
+});
+
+test("deleteTodo should return array without element with id",function(t){
+  let dummyDeleteTodo = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ];
+  let expected=[
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    }
+  ];
+  let actual=logic.deleteTodo(dummyDeleteTodo,0);
+  t.deepEqual(expected,actual);
+  t.end();
+})
