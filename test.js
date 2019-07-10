@@ -155,3 +155,20 @@ test("check existing id is toggled from false to true", function(t) {
   t.deepEqual(actual, expected);
   t.end();
 })
+test("check if done is toggled from true to false",function(t){
+  let todos = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    }];
+  let actual = logic.markTodo(todos,0);
+  let expected = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: false,
+    }];
+  t.deepEqual(actual, expected);
+  t.end();
+})
