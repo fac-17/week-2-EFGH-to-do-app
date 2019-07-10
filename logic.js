@@ -38,18 +38,15 @@ var todoFunctions = {
     // hint: array.filter
   },
   markTodo: function(todos, idToMark) {
-    let match=todos.findIndex(function(todo){
-      return todo.id===idToMark;
+    return todos.map(function(todo){
+      if (todo.id === idToMark) {
+        todo.done = !todo.done
+        return todo;
+      } else {
+        return todo;
+      }
     })
-    if (match>-1){
-      if (todos[match].done === false) {
-        todos[match].done =true;
-      }
-      else {
-        todos[match].done=false;
-      }
-    }
-    return todos;
+
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled

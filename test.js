@@ -184,3 +184,17 @@ test("Check if todo array is not modified", function(t) {
     t.notEqual(actual, todos);
     t.end();
 })
+
+test("Check if todo array elements are not modified", function(t){
+  let todos=[
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    }];
+  let todosBeforeStringified=JSON.stringify(todos);
+  logic.markTodo(todos,0);
+  let todosAfterRunningStringified=JSON.stringify(todos);
+  t.equal(todosBeforeStringified,todosAfterRunningStringified);
+  t.end();
+})
