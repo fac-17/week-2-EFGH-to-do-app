@@ -137,3 +137,21 @@ test("markTodo should return an array",function(t){
   t.equal(typeof logic.markTodo(todos,1),typeof [],"markTodo should return an array");
   t.end();
 })
+
+test("check existing id is toggled from false to true", function(t) {
+  let todos = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: false,
+    }];
+  let actual = logic.markTodo(todos,0);
+  let expected = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: false,
+    }];
+  t.deepEqual(actual, expected);
+  t.end();
+})
