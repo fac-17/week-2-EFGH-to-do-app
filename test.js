@@ -150,7 +150,7 @@ test("check existing id is toggled from false to true", function(t) {
     {
       id: 0,
       description: 'smash avocados',
-      done: false,
+      done: true,
     }];
   t.deepEqual(actual, expected);
   t.end();
