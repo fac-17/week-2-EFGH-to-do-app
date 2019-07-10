@@ -5,4 +5,3 @@ test('Example test', function(t) {
   t.pass();
   t.end();
 });
-
