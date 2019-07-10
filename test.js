@@ -5,3 +5,23 @@ test('Example test', function(t) {
   t.pass();
   t.end();
 });
+
+test("deleteTodo should return an array", function(t) {
+  let expected = typeof [];
+  let dummyDeleteTodo = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ];
+  let returnedValue = logic.deleteTodo(dummyDeleteTodo,0);
+  let actual = typeof returnedValue;
+  t.equal(expected,actual);
+  t.end();
+}) 
