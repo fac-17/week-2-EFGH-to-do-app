@@ -42,7 +42,12 @@ var todoFunctions = {
       return todo.id===idToMark;
     })
     if (match>-1){
-      todos[match].done=true;
+      if (todos[match].done === false) {
+        todos[match].done =true;
+      }
+      else {
+        todos[match].done=false;
+      }
     }
     return todos;
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)

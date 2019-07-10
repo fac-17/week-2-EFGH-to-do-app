@@ -172,3 +172,15 @@ test("check if done is toggled from true to false",function(t){
   t.deepEqual(actual, expected);
   t.end();
 })
+
+test("Check if todo array is not modified", function(t) {
+  let todos = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    }];
+    let actual = logic.markTodo(todos, 0);
+    t.notEqual(actual, todos);
+    t.end();
+})
