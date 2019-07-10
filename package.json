@@ -1,0 +1,23 @@
+{
+  "name": "week-2-efgh-to-do-app",
+  "version": "1.0.0",
+  "description": "to-do-app",
+  "main": "dom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-17/week-2-EFGH-to-do-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-17/week-2-EFGH-to-do-app/issues"
+  },
+  "homepage": "https://github.com/fac-17/week-2-EFGH-to-do-app#readme",
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  }
+}
