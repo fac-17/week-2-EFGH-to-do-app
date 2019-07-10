@@ -30,16 +30,9 @@ var todoFunctions = {
     // hint: array.concat
   },
   deleteTodo: function(todos, idToDelete) {
-    let match = todos.findIndex(function(el){
-     return el.id===idToDelete
-    });
-    if (match > -1) {
-      todos.splice(match,1);
-    }
-    return todos;
-    // return todos.filter(todo => {
-    //   return todo['id'] !== idToDelete;
-    // })
+    return todos.filter(todo => {
+      return todo['id'] !== idToDelete;
+    })
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
