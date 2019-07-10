@@ -28,6 +28,11 @@ var todoFunctions = {
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
+    newTodo["id"] = todoFunctions.generateId();
+    let newArr = [];
+    newArr = todoFunctions.cloneArrayOfObjects(todos);
+    newArr.push(newTodo);
+    return newArr;
   },
   deleteTodo: function(todos, idToDelete) {
     return todos.filter(todo => {
@@ -54,7 +59,7 @@ var todoFunctions = {
 
 // Why is this if statement necessary?
 // The answer has something to do with needing to run code both in the browser and in Node.js
-// See this article for more details: 
+// See this article for more details:
 // http://www.matteoagosti.com/blog/2013/02/24/writing-javascript-modules-for-both-browser-and-node/
 if (typeof module !== 'undefined') {
   module.exports = todoFunctions;
