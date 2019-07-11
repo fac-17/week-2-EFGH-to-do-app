@@ -34,7 +34,8 @@
     todoNode.appendChild(editButton);
     editButton.addEventListener('click', function(event) {
     var userInput = prompt("Update your todo: ", todo.description);
-    var newState = todoFunctions.editTodo(state, todo.id, userInput);
+    //set a default value as todo.description
+    var newState = todoFunctions.editTodo(state, todo.id, userInput || todo.description);
     update(newState);
     });
     
