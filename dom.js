@@ -51,13 +51,21 @@
       // what does event.preventDefault do?
       // what is inside event.target?
 
-      var description = '?'; // event.target ....
+      event.preventDefault();
 
-      // hint: todoFunctions.addTodo
-      var newState = []; // ?? change this!
+      var description = event.target.elements[0].value; // event.target ....
+
+      var newState = todoFunctions.addTodo(state,
+        {
+          description: description
+        }
+      )
       update(newState);
     });
   }
+
+      // hint: todoFunctions.addTodo
+  
 
   // you should not need to change this function
   var update = function(newState) {
