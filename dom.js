@@ -28,8 +28,8 @@
     editButton.setAttribute('class', 'edit-button');
     todoNode.appendChild(editButton);
     editButton.addEventListener('click', function(event) {
-    span.setAttribute('contenteditable', true);
-    var newState = todoFunctions.editTodo(state, todo.id, span.textContent);
+    var userInput = prompt("Update your todo: ", todo.description);
+    var newState = todoFunctions.editTodo(state, todo.id, userInput);
     update(newState);
     });
     //Save button
