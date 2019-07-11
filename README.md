@@ -38,3 +38,5 @@ For the first part of the project we created three functions using TDD. Then, we
 3. Mark to-do as done
 4. Sort to-dos by alphabetical order
 5. Edit to-dos using a prompt
+
+![checklist](https://media3.giphy.com/media/3o6MbhbYBsqTrbP2qQ/source.gif)
