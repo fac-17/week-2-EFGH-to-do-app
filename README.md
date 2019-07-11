@@ -3,10 +3,10 @@
 ## Aim - Use Test driven development(TDD) to build a To-do app
 
 ## Team
-1. Jack
-2. Gigi
-3. Martha
-4. Jan
+1. [Jack](https://github.com/jackbridger)
+2. [Gigi](https://github.com/gminova)
+3. [Martha](https://github.com/mkatenolan)
+4. [Jan](https://github.com/crianonim)
 
 ## Technology & Tools
 TDD (Tape & tap-spec), Pair programming, Git and GitHub, npm, vanilla JavaScript, HTML, CSS, VS Code, Atom and command line.
