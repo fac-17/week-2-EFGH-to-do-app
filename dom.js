@@ -34,8 +34,13 @@
     todoNode.appendChild(editButton);
     editButton.addEventListener('click', function(event) {
     var userInput = prompt("Update your todo: ", todo.description);
+    //prevent user input to return null if I press cancel prompt Edit
+    if(userInput === '' || userInput === null) {
+      userInput = todo.description;
+    }  else {
     var newState = todoFunctions.editTodo(state, todo.id, userInput);
     update(newState);
+      }
     });
     
     if(todo.done) {
