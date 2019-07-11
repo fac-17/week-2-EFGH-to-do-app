@@ -31,11 +31,18 @@
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
-
-    // add classes for css
-
+    var markButtonNode = document.createElement('button');
+    markButtonNode.classList.add('mark-button');
+    markButtonNode.addEventListener('click',function(event) {
+      var newState = todoFunctions.markTodo(state,todo.id);
+      update(newState);
+    });
+    todoNode.appendChild(markButtonNode);
     return todoNode;
   };
+    // add classes for css
+
+
 
   // bind create todo form
   if (addTodoForm) {
