@@ -49,7 +49,7 @@
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
-    deleteButtonNode.textContent='x';
+    deleteButtonNode.textContent='Delete';
     deleteButtonNode.setAttribute('class', 'delete-button');
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
