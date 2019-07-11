@@ -65,6 +65,7 @@ button, input[type="submit"] {
     margin-top:1em;
     background-color: #ffffff80;
     border-radius: 3px;
+    font-weight: bold;
 }
 button:hover {
     background-color: #ffffff;
@@ -118,6 +119,9 @@ input[type="submit"]:hover {
   background-color:#FFB6C1;
 }
 @media only screen and (min-width: 900px) {
+    .description{
+        font-size: 1.5em;
+    }
   input[name="description"] {
     max-width: 500px;
   }
