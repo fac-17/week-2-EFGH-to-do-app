@@ -22,6 +22,11 @@
     span.textContent = todo.description;
     todoNode.appendChild(span);
 
+    span.addEventListener("click",function(event) {
+      var newState = todoFunctions.markTodo(state,todo.id);
+      update(newState);
+    });
+
     //Edit button
     var editButton = document.createElement('button');
     editButton.textContent = 'Edit';
@@ -32,16 +37,7 @@
     var newState = todoFunctions.editTodo(state, todo.id, userInput);
     update(newState);
     });
-    //Save button
-    var saveButton = document.createElement('button');
-    saveButton.textContent = 'Save';
-    saveButton.setAttribute('class', 'hidden save-button');
-    todoNode.appendChild(saveButton);
-    saveButton.addEventListener('click', function(event) {
     
-    update(newState);
-    });
-
     if(todo.done) {
       span.classList.add('done');
     }
@@ -49,7 +45,7 @@
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
-    deleteButtonNode.textContent='x';
+    deleteButtonNode.textContent='Delete';
     deleteButtonNode.setAttribute('class', 'delete-button');
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
