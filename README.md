@@ -31,6 +31,15 @@ As a disorganised person I want to:
  &#x2611; a visual indication of which to-do I'm about to interact with so that it's clear what I'm editing  
 
 ### What did we learn?
+* To use Test Driven Development on a team project with pair programming
+* To use pure functions whenever possible
+* To manipulate the DOM using node-lists
+* To work with a pre-existing codebase
+* To use IIFEs (Immediately Invoked Function Expressions) to protect variables. Note: we didn't write them but they were in the skeleton
+* To resolve more complex git issues
+
+
+### What did we complete?
 
 For the first part of the project we created three functions using TDD. Then, we covered the stretch goals. In total we have the following functions:
 1. Add to-do
