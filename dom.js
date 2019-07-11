@@ -21,9 +21,31 @@
     span.setAttribute('class', 'description');
     span.textContent = todo.description;
     todoNode.appendChild(span);
+
+    //Edit button
+    var editButton = document.createElement('button');
+    editButton.textContent = 'Edit';
+    editButton.setAttribute('class', 'edit-button');
+    todoNode.appendChild(editButton);
+    editButton.addEventListener('click', function(event) {
+    span.setAttribute('contenteditable', true);
+    var newState = todoFunctions.editTodo(state, todo.id, span.textContent);
+    update(newState);
+    });
+    //Save button
+    var saveButton = document.createElement('button');
+    saveButton.textContent = 'Save';
+    saveButton.setAttribute('class', 'hidden save-button');
+    todoNode.appendChild(saveButton);
+    saveButton.addEventListener('click', function(event) {
+    
+    update(newState);
+    });
+
     if(todo.done) {
       span.classList.add('done');
     }
+
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
