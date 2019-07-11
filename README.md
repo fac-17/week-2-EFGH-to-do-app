@@ -39,4 +39,4 @@ For the first part of the project we created three functions using TDD. Then, we
 4. Sort to-dos by alphabetical order
 5. Edit to-dos using a prompt
 
-![checklist](https://media3.giphy.com/media/3o6MbhbYBsqTrbP2qQ/source.gif)
+![checklist](http://1.bp.blogspot.com/-7RM02ZPOjRA/VqbwnyzzmCI/AAAAAAAAB80/sRn7FQU3ftU/s1600/not-give-a-fuck.gif)
