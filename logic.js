@@ -63,6 +63,12 @@ var todoFunctions = {
     // hint: array.slice, array.sort
     sortedTodos = this.cloneArrayOfObjects(todos);
     return sortedTodos.sort(sortFunction);
+  },
+  editTodo: function(todos, idToEdit, descriptionToEdit) {
+    let editedTodos = this.cloneArrayOfObjects(todos);
+    let todo = editedTodos.find(todo=>todo.id===idToEdit);
+    todo.description = descriptionToEdit;
+    return editedTodos;
   }
 };
 
