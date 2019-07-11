@@ -15,9 +15,12 @@
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
-    // you will need to use addEventListener
 
-    // add span holding description
+
+    let span = document.createElement('span');
+    span.textContent = todo.description;
+    todoNode.appendChild(span);
+
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
