@@ -15,15 +15,20 @@
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
-
+    todoNode.setAttribute('class', 'todo');
 
     let span = document.createElement('span');
+    span.setAttribute('class', 'description');
     span.textContent = todo.description;
     todoNode.appendChild(span);
-
+    if(todo.done) {
+      span.classList.add('done');
+    }
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
+    deleteButtonNode.textContent='x';
+    deleteButtonNode.setAttribute('class', 'delete-button');
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -33,6 +38,7 @@
     // add markTodo button
     var markButtonNode = document.createElement('button');
     markButtonNode.classList.add('mark-button');
+    markButtonNode.textContent='Done';
     markButtonNode.addEventListener('click',function(event) {
       var newState = todoFunctions.markTodo(state,todo.id);
       update(newState);
@@ -52,17 +58,25 @@
       // what is inside event.target?
 
       event.preventDefault();
-
+      
       var description = event.target.elements[0].value; // event.target ....
-
-      var newState = todoFunctions.addTodo(state,
+      if(description != '') {
+        var newState = todoFunctions.addTodo(state,
         {
           description: description
         }
       )
+      event.target.reset();
       update(newState);
+      }      
     });
   }
+  var sort = document.getElementById('sort');
+  sort.setAttribute('class', 'sort-button');
+  sort.addEventListener('click', function(event) {
+    var newState = todoFunctions.sortTodos(state, (a, b) => (a.description > b.description) ? 1 : (a.description === b.description) ? ((a.done > b.done) ? 1 : -1) : -1 );
+    update(newState);
+  });
 
       // hint: todoFunctions.addTodo
   
