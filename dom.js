@@ -32,16 +32,7 @@
     var newState = todoFunctions.editTodo(state, todo.id, userInput);
     update(newState);
     });
-    //Save button
-    var saveButton = document.createElement('button');
-    saveButton.textContent = 'Save';
-    saveButton.setAttribute('class', 'hidden save-button');
-    todoNode.appendChild(saveButton);
-    saveButton.addEventListener('click', function(event) {
     
-    update(newState);
-    });
-
     if(todo.done) {
       span.classList.add('done');
     }
