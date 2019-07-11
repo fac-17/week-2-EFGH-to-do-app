@@ -58,15 +58,17 @@
       // what is inside event.target?
 
       event.preventDefault();
- 
+      
       var description = event.target.elements[0].value; // event.target ....
-
-      var newState = todoFunctions.addTodo(state,
+      if(description != '') {
+        var newState = todoFunctions.addTodo(state,
         {
           description: description
         }
       )
+      event.target.reset();
       update(newState);
+      }      
     });
   }
   var sort = document.getElementById('sort');
