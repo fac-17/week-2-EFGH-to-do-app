@@ -1,0 +1,131 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color:#6b778c;
+    color: #172b4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(https://images.pexels.com/photos/1139541/pexels-photo-1139541.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+    background-size:cover;
+}
+.hidden{
+    display: none;
+}
+#todo-container {
+    margin: auto;
+
+}
+
+h1 {
+  margin:0;
+  font-family:'Shadows Into Light', cursive;
+  font-size: 4rem;
+  color: black;
+}
+ul {
+    margin:0;
+    list-style: none;
+    padding-left: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline-start: 0;
+    align-items: center;
+    justify-content: center
+}
+.todo {
+    background-color: #dfe1e6;
+    border-radius: 3px;
+    padding: 1em;
+    margin:1em;
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    max-width: 380px;
+    flex-grow: 1;
+}
+.description {
+    background-color: white;
+    padding: 1em;
+    box-shadow:0 1px 0 rgba(9,30,66,.25);
+    border-radius: 3px;
+    width:100%;
+    display: block;
+}
+.description:hover {
+    background-color: #efefef;
+
+}
+button, input[type="submit"] {
+    padding: 1em;
+    background-color: inherit;
+    border: none;
+    margin:2px;
+    color: #172b4d;
+    margin-top:1em;
+    background-color: #ffffff80;
+    border-radius: 3px;
+}
+button:hover {
+    background-color: #ffffff;
+
+}
+.done {
+    opacity:0.1;
+}
+input[type="submit"], .sort-button{
+    background-color:#dfe1e6;;
+
+}
+form {
+    display: flex;
+    margin: 1em;
+    justify-content: center;
+    width:100%;
+    background-color:#ffffff50;
+    height: 100px;
+
+}
+input[name="description"]{
+    flex-grow: 1;
+    padding: 0.3em;
+    font-size: 1.2em;
+    align-self: center;
+    border-color: #172b4d;
+    border-style: solid;
+    border-width:1px;
+    margin-left: 1em;
+    max-width: 60%;
+}
+input[type="submit"]{
+    font-size:1em;
+    align-self: center;
+    margin:0 2em;
+    /* margin-left: 1em; */
+}
+input[type="submit"]:hover {
+  background-color:#FFB6C1;
+}
+.sort-button {
+  font-size: 1em;
+}
+
+.sort-button:hover {
+  background-color:#FFB6C1;
+}
+@media only screen and (min-width: 900px) {
+  input[name="description"] {
+    max-width: 500px;
+  }
+
+  form{
+    max-width:50%;
+    height: 100px;
+  }
+
+  .sort-button {
+    width: 12em;
+    height: 3em;
+
+  }
+}
