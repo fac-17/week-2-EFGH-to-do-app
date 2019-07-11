@@ -11,6 +11,11 @@
 ## Technology & Tools
 TDD (Tape & tap-spec), Pair programming, Git and GitHub, npm, vanilla JavaScript, HTML, CSS, VS Code, Atom and command line.
 
+## Screenshots  
+
+![desktop](https://i.imgur.com/0XYbqWr.jpg)
+![mobile](https://i.imgur.com/N0nNMiQ.png)
+
 ## The project
 
 ### User stories:
@@ -22,7 +27,7 @@ As a disorganised person I want to:
  &#x2611; mark tasks as complete so that I can focus on the tasks I have left  
  &#x2611; the to-dos to be large enough so that I don't hit the wrong one with my thumb  
 
-#### Potential stretch goals
+### Potential stretch goals
 
 As a disorganised person I want to:
 
