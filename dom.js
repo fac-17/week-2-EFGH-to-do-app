@@ -52,7 +52,7 @@
       // what is inside event.target?
 
       event.preventDefault();
-
+ 
       var description = event.target.elements[0].value; // event.target ....
 
       var newState = todoFunctions.addTodo(state,
@@ -64,6 +64,7 @@
     });
   }
   var sort = document.getElementById('sort');
+  sort.setAttribute('class', 'sort-button');
   sort.addEventListener('click', function(event) {
     var newState = todoFunctions.sortTodos(state, (a, b) => (a.description > b.description) ? 1 : (a.description === b.description) ? ((a.done > b.done) ? 1 : -1) : -1 );
     update(newState);
