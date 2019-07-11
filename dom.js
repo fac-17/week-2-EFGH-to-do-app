@@ -15,15 +15,18 @@
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
-
+    todoNode.setAttribute('class', 'todo');
 
     let span = document.createElement('span');
+    span.setAttribute('class', 'description');
     span.textContent = todo.description;
     todoNode.appendChild(span);
 
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
+    deleteButtonNode.textContent='x';
+    deleteButtonNode.setAttribute('class', 'delete-button');
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -33,6 +36,7 @@
     // add markTodo button
     var markButtonNode = document.createElement('button');
     markButtonNode.classList.add('mark-button');
+    markButtonNode.textContent='Done';
     markButtonNode.addEventListener('click',function(event) {
       var newState = todoFunctions.markTodo(state,todo.id);
       update(newState);
