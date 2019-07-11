@@ -22,6 +22,11 @@
     span.textContent = todo.description;
     todoNode.appendChild(span);
 
+    span.addEventListener("click",function(event) {
+      var newState = todoFunctions.markTodo(state,todo.id);
+      update(newState);
+    });
+
     //Edit button
     var editButton = document.createElement('button');
     editButton.textContent = 'Edit';
