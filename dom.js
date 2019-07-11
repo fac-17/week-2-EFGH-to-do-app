@@ -48,6 +48,11 @@
       update(newState);
     });
   }
+  var sort = document.getElementById('sort');
+  sort.addEventListener('click', function(event) {
+    var newState = todoFunctions.sortTodos(state, (a, b) => (a.description > b.description) ? 1 : (a.description === b.description) ? ((a.done > b.done) ? 1 : -1) : -1 );
+    update(newState);
+  });
 
   // you should not need to change this function
   var update = function(newState) {

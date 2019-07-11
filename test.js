@@ -244,3 +244,66 @@ test("markTodo - Check if todo array elements are not modified", function(t){
   t.equal(todosBeforeStringified,todosAfterRunningStringified);
   t.end();
 })
+
+//SORT TESTS
+test('Testing sort function', function(t){
+  const actual = logic.sortTodos([{
+    id: 2,
+    description: 'second todo',
+    done: true
+  },
+  {
+    id: 1,
+    description: 'first todo',
+    done: false
+  }
+],
+(a, b) => (a.id > b.id) ? 1 : (a.id === b.id) ? ((a.done > b.done) ? 1 : -1) : -1 );
+const expected =[{
+  id: 1,
+  description: 'first todo',
+  done: false
+},
+{
+  id: 2,
+  description: 'second todo',
+  done: true
+}];
+t.deepEqual(actual, expected, 'Should return sorted arr by obj id');
+t.end();
+});
+
+test ("Testing sorting by A-Z of description, if equal, then by true/false value", function(t) {
+  const actual = logic.sortTodos([{
+    id: 1,
+    description: 'ccccsadd',
+    done: true
+  },
+{
+  id: 2,
+  description: 'bdbddf',
+  done: true
+},
+{
+  id: 3,
+  description: 'zzzzff',
+  done: false
+}], (a, b) => (a.description > b.description) ? 1 : (a.description === b.description) ? ((a.done > b.done) ? 1 : -1) : -1 );
+const expected = [{
+id: 2,
+description: 'bdbddf',
+done: true
+},
+{
+  id: 1,
+  description: 'ccccsadd',
+  done: true
+},
+{
+id: 3,
+description: 'zzzzff',
+done: false
+}]
+t.deepEqual(actual, expected, "Testing sorting by A-Z of description, if equal, then by true/false value");
+t.end();
+});
