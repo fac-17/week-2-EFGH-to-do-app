@@ -70,6 +70,10 @@ button:hover {
     background-color: #ffffff;
 
 }
+label{
+    width:0;
+    overflow: hidden;
+}
 .done {
     opacity:0.1;
 }

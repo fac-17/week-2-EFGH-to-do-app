@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>My todos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <link href="favicon.ico" rel="shortcut icon">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <link href="favicon.ico" rel="shortcut icon" />
   </head>
   <body>
-    <h1> My Todos </h1>
-    <div id = "todo-container">
-        <ul>
-        </ul>
+    <h1>My Todos</h1>
+    <div id="todo-container">
+      <ul></ul>
     </div>
     <form id="add-todo">
-      <input type="text" name="description" value="">
-      <input type="submit" name="" value="Submit">
+      <label for="form-desc">Description</label>
+      <input id="form-desc" aria-label="description" type="text" name="description" value="" />
+
+      <input type="submit" name="" value="Submit" />
     </form>
-    <button id='sort'>Sort</button>
+    <button id="sort">Sort</button>
   </body>
-  <script type="text/javascript" src = "./logic.js"></script>
-  <script type="text/javascript" src = "./dom.js"></script>
+  <script type="text/javascript" src="./logic.js"></script>
+  <script type="text/javascript" src="./dom.js"></script>
 </html>
