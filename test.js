@@ -307,3 +307,14 @@ done: false
 t.deepEqual(actual, expected, "Testing sorting by A-Z of description, if equal, then by true/false value");
 t.end();
 });
+
+test('Edit function returns an array', function(t) {
+  const actual = typeof logic.editTodo([{
+    id: 0,
+    description: 'smash avocados',
+    done: true,
+  }], 0, 'new todo');
+  const expected = typeof [];
+  t.deepEqual(actual, expected, 'Edit function returns and array');
+  t.end();
+});
