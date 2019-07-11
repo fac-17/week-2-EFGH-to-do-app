@@ -1,21 +1,12 @@
-# Project
+# To Do App
 
-## Use TDD to build a To-do app
+## Aim - Use Test driven development(TDD) to build a To-do app
 
-The aim for the next couple of days is to build a basic To-do app. This file will help you get started and give you an introduction to unit testing and TDD for client-side code.
-
-This project is split into three parts:
-
-  1. Use TDD to create the logic needed to modify your to-do list. This code will not interact with the DOM. Write your tests in `skeleton/test.js`
-  2. Render the to-do list to the DOM
-  3. Add your own features
-
-## Setup
-
-  * Read through `skeleton/logic.js`. Don't worry if it does not all makes sense at first.
-  * Set up a new repo for your project this week.
-  * Copy and commit the files inside skeleton folder into your repository. **warning** only one person in your team should do this, then everyone else can pull the same repo.
-  * `npm init`, then install Tape and anything else you want to test with.
+## Team
+1. Jack
+2. Gigi
+3. Martha
+4. Jan
 
 ## The project
 
