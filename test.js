@@ -318,3 +318,27 @@ test('Edit function returns an array', function(t) {
   t.deepEqual(actual, expected, 'Edit function returns and array');
   t.end();
 });
+
+test ('Test edit function returns an updated description', function(t) {
+  const actual = logic.editTodo([{
+    id: 1,
+    description: 'original text',
+    done: true
+  }, {
+    id: 2,
+    description: 'original text 2',
+    done: false
+  }], 1, 'updated text');
+
+  const expected = [{
+    id: 1,
+    description: 'updated text',
+    done: true
+  }, {
+    id: 2,
+    description: 'original text 2',
+    done: false
+  }];
+  t.deepEqual(actual, expected, 'editTodos should return an updated description');
+  t.end();
+});
