@@ -21,7 +21,9 @@
     span.setAttribute('class', 'description');
     span.textContent = todo.description;
     todoNode.appendChild(span);
-
+    if(todo.done) {
+      span.classList.add('done');
+    }
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
