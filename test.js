@@ -20,13 +20,6 @@ test('Testing that addTodo return an array with one new item', function(t) {
   t.end();
 })
 
-/*test('Testing that the todos array is cloned', function(t) {
-  const actual = logic.addTodo([1, 2, 3], 4).length;
-  const expected = 4;
-  t.equal(actual, expected, 'Testing that the todos array is cloned');
-  t.end();
-})*/
-
 test('Testing that addTodo generates an id for newTodo', function(t) {
   const result = logic.addTodo([{
     id: 1,
