@@ -21,7 +21,7 @@
     span.setAttribute('class', 'description');
     span.textContent = todo.description;
     todoNode.appendChild(span);
-
+    span.setAttribute("tabindex", 0);
     span.addEventListener("click",function(event) {
       var newState = todoFunctions.markTodo(state,todo.id);
       update(newState);
