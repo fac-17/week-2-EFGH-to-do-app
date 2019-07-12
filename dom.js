@@ -3,18 +3,18 @@
 // it keeps everything inside hidden from the rest of our application
 (function() {
   // This is the dom node where we will keep our todo
-  var container = document.getElementById('todo-container');
-  var addTodoForm = document.getElementById('add-todo');
+  const container = document.getElementById('todo-container');
+  const addTodoForm = document.getElementById('add-todo');
 
-  var state = [
+  let state = [
     { id: -3, description: 'first todo' },
     { id: -2, description: 'second todo' },
     { id: -1, description: 'third todo' },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
-  var createTodoNode = function(todo) {
-    var todoNode = document.createElement('li');
+  let createTodoNode = function(todo) {
+    const todoNode = document.createElement('li');
     todoNode.setAttribute('class', 'todo');
 
     let span = document.createElement('span');
@@ -23,19 +23,19 @@
     todoNode.appendChild(span);
 
     span.addEventListener("click",function(event) {
-      var newState = todoFunctions.markTodo(state,todo.id);
+      let newState = todoFunctions.markTodo(state,todo.id);
       update(newState);
     });
 
     //Edit button
-    var editButton = document.createElement('button');
+    const editButton = document.createElement('button');
     editButton.textContent = 'Edit';
     editButton.setAttribute('class', 'edit-button');
     todoNode.appendChild(editButton);
     editButton.addEventListener('click', function(event) {
-    var userInput = prompt("Update your todo: ", todo.description);
+    let userInput = prompt("Update your todo: ", todo.description);
     //set a default value as todo.description
-    var newState = todoFunctions.editTodo(state, todo.id, userInput || todo.description);
+    let newState = todoFunctions.editTodo(state, todo.id, userInput || todo.description);
     update(newState);
     });
     
@@ -45,21 +45,21 @@
 
 
     // this adds the delete button
-    var deleteButtonNode = document.createElement('button');
+    let deleteButtonNode = document.createElement('button');
     deleteButtonNode.textContent='Delete';
     deleteButtonNode.setAttribute('class', 'delete-button');
     deleteButtonNode.addEventListener('click', function(event) {
-      var newState = todoFunctions.deleteTodo(state, todo.id);
+      let newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
     });
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
-    var markButtonNode = document.createElement('button');
+    let markButtonNode = document.createElement('button');
     markButtonNode.classList.add('mark-button');
     markButtonNode.textContent='Done';
     markButtonNode.addEventListener('click',function(event) {
-      var newState = todoFunctions.markTodo(state,todo.id);
+      let newState = todoFunctions.markTodo(state,todo.id);
       update(newState);
     });
     todoNode.appendChild(markButtonNode);
