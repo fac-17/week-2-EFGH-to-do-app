@@ -51,6 +51,7 @@ ul {
     border-radius: 3px;
     width:100%;
     display: block;
+    word-break: break-all;
 }
 .description:hover {
     background-color: #efefef;
