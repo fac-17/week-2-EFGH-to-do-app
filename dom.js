@@ -21,7 +21,7 @@
     span.setAttribute('class', 'description');
     span.textContent = todo.description;
     todoNode.appendChild(span);
-
+    span.setAttribute("tabindex", 0);
     span.addEventListener("click",function(event) {
       let newState = todoFunctions.markTodo(state,todo.id);
       update(newState);
@@ -38,7 +38,7 @@
     let newState = todoFunctions.editTodo(state, todo.id, userInput || todo.description);
     update(newState);
     });
-    
+
     if(todo.done) {
       span.classList.add('done');
     }
@@ -59,9 +59,21 @@
     // add markTodo button
     let markButtonNode = document.createElement('button');
     markButtonNode.classList.add('mark-button');
-    markButtonNode.textContent='Done';
+    if(todo.done) {
+      markButtonNode.textContent = 'Undo';
+    } else {
+      markButtonNode.textContent ='Done';
+    };
+
+
     markButtonNode.addEventListener('click',function(event) {
+
+
+
+
+
       let newState = todoFunctions.markTodo(state,todo.id);
+
       update(newState);
     });
     todoNode.appendChild(markButtonNode);
@@ -79,7 +91,7 @@
       // what is inside event.target?
 
       event.preventDefault();
-      
+
       var description = event.target.elements[0].value; // event.target ....
       if(description != '') {
         var newState = todoFunctions.addTodo(state,
@@ -89,7 +101,7 @@
       )
       event.target.reset();
       update(newState);
-      }      
+      }
     });
   }
   var sort = document.getElementById('sort');
@@ -100,7 +112,7 @@
   });
 
       // hint: todoFunctions.addTodo
-  
+
 
   // you should not need to change this function
   var update = function(newState) {
