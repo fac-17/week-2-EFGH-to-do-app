@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     background-image: url(https://images.pexels.com/photos/1139541/pexels-photo-1139541.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
     background-size:cover;
+    background-attachment: fixed;
 }
 .hidden{
     display: none;
