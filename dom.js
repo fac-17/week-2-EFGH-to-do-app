@@ -49,8 +49,10 @@
     deleteButtonNode.textContent='Delete';
     deleteButtonNode.setAttribute('class', 'delete-button');
     deleteButtonNode.addEventListener('click', function(event) {
-      let newState = todoFunctions.deleteTodo(state, todo.id);
-      update(newState);
+      if (confirm('Are you sure you want to delete this todo?')) {
+        let newState = todoFunctions.deleteTodo(state, todo.id);
+        update(newState);
+      }
     });
     todoNode.appendChild(deleteButtonNode);
 
