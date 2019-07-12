@@ -28,8 +28,7 @@ var todoFunctions = {
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
-    let todoWithId = {};
-    todoWithId = Object.assign(newTodo);
+    let todoWithId = Object.assign({}, newTodo);
     todoWithId["id"] = todoFunctions.generateId();
     let newArr = [];
     newArr = todoFunctions.cloneArrayOfObjects(todos);
