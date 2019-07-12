@@ -66,6 +66,10 @@
 
     markButtonNode.addEventListener('click',function(event) {
 
+
+
+
+
       let newState = todoFunctions.markTodo(state,todo.id);
 
       update(newState);
