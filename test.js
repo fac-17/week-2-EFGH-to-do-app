@@ -13,10 +13,26 @@ test('Testing that addTodo returns an array ', function(t) {
   t.end();
 });
 
-test('Testing that addTodo return an array with one new item', function(t) {
-  const actual = logic.addTodo([1, 2, 3], 4);
-  const expected = [1, 2, 3, 4];
-  t.deepEqual(actual, expected, 'addTodo should return an array with one new item');
+test('Testing that addTodo return an array of objects with one new object with id', function(t) {
+  const actual = logic.addTodo([{
+    id: 1,
+    description: 'some to-do',
+    done: false
+  }],
+  {
+  description: 'some task',
+  done: false});
+
+  const expected = [{
+    id: 1,
+    description: 'some to-do',
+    done: false
+  },{
+    description: 'some task',
+    done: false,
+    id: 2
+  }];
+  t.deepEqual(actual, expected, 'addTodo should return an array of objects with one new object with id');
   t.end();
 })
 
