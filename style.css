@@ -74,9 +74,6 @@ button:hover {
 
 }
 
-.mark-button-highlight {
-  background-color: green;
-}
 label{
     width:0;
     overflow: hidden;
