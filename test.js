@@ -61,6 +61,29 @@ t.deepEqual(actual, expected, "newTodo should have an id")
 t.end();
 });
 
+
+test("check that addToDo returns an array of objects", function(t) {
+  const actual = Array.isArray(logic.addTodo([
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ], {
+    id: 1,
+    description: 'make coffee',
+    done: false,
+  })) ;
+  const expected = Array.isArray([]);
+  t.equal(actual, expected, "should accept input and return an array");
+  t.end();
+  });
+
 test("deleteTodo should return an array", function(t) {
   let expected = typeof [];
   let dummyDeleteTodo = [
